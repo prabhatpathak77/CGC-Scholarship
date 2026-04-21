@@ -1,1 +1,1 @@
-# CGC-Scholorship
+# CGC-Scholarship
