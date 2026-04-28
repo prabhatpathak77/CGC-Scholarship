@@ -1,6 +1,19 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useRef } from 'react';
 
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Attempt to force autoplay on mount
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Autoplay was prevented by the browser:", error);
+      });
+    }
+  }, []);
+
   return (
     <main className="min-h-screen bg-black flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background ambient effect */}
@@ -20,13 +33,14 @@ export default function Home() {
         {/* Video Container */}
         <div className="w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.1)] border border-white/10 bg-zinc-900 animate-fade-in-up" style={{ animationDelay: '150ms' }}>
           <video
+            ref={videoRef}
             className="w-full h-full object-cover"
             autoPlay
-            muted // Note: Muted is often required for autoplay to work on mobile browsers
+            muted
             playsInline
             loop
             controls
-            preload="metadata"
+            preload="auto"
           >
             {/* The user should place their video in the public folder as video.mp4 */}
             <source src="/video.mp4" type="video/mp4" />
