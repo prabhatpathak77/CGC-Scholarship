@@ -23,7 +23,7 @@ export default function Home() {
         {/* Header / Title */}
         <div className="mb-8 text-center animate-fade-in-up">
           <h1 className="text-3xl md:text-5xl font-light text-white tracking-tight mb-3">
-            Video Presentation
+            NaedeX Video Presentation
           </h1>
           <p className="text-gray-400 text-sm md:text-base font-light">
             Please make sure your device is not on silent to hear the audio.
