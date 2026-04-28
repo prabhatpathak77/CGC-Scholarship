@@ -31,7 +31,7 @@ export default function Home() {
         </div>
 
         {/* Video Container */}
-        <div className="w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.1)] border border-white/10 bg-zinc-900 animate-fade-in-up" style={{ animationDelay: '150ms' }}>
+        <div className="w-full max-w-[400px] mx-auto aspect-[9/16] rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.1)] border border-white/10 bg-zinc-900 animate-fade-in-up" style={{ animationDelay: '150ms' }}>
           <video
             ref={videoRef}
             className="w-full h-full object-cover"
@@ -44,13 +44,13 @@ export default function Home() {
           >
             {/* The user should place their video in the public folder as video.mp4 */}
             <source src="/video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+
           </video>
         </div>
         
         {/* Footer info */}
         <div className="mt-8 text-center opacity-50 text-xs text-white/50 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
-          <p>Scan to view</p>
+
         </div>
       </div>
     </main>
